@@ -1,6 +1,6 @@
 # Timbrado de CFDI con FinkOK
 
-Esto no es de ninguna manera un endoso del (Servicio de Timbrado de FinkOK)[http://www.finkok.com/] pero como no tienen SDK para ruby, pues pongo esto por acá.
+Esto no es de ninguna manera un endoso del [Servicio de Timbrado de FinkOK](http://www.finkok.com/) pero como no tienen SDK para ruby, pues pongo esto por acá.
 
 
 ## Instalación
