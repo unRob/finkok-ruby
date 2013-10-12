@@ -12,6 +12,7 @@ Necesitamos usar Savon para consumir SOAP. Ya sé. No hay proveedores que ofrezc
 	
 ## Uso
 
+```ruby
     require_relative 'finkok.rb'
     
     usuario = 'un usuario'
@@ -32,7 +33,7 @@ Necesitamos usar Savon para consumir SOAP. Ya sé. No hay proveedores que ofrezc
     # también cancela, pero como me dio hueva incluir los certificados y llaves...
     # Obtener estos está documentado acá https://github.com/unRob/CFDI/blob/master/examples/crear_factura.rb
     #puts proveedor.cancela timbrada[:uuid], 'AAD990814BP7', certificado.to_s, llave.to_s
-   
+``` 
    
 ## Licencia
 ![What the fuck Public License](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-1.png)
