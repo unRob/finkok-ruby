@@ -20,8 +20,9 @@ Necesitamos usar Savon para consumir SOAP. Ya sé. No hay proveedores que ofrezc
     # para hacerlo ya enserio, usas entorno: pruebas o nomás no lo usas
     proveedor = FinkOK::Comprobante.new(usuario, password, entorno: 'pruebas')
     
-    # este xml tiene una fecha que debemos cambiar, además de generar el sello correspondiente, partiendo de
-    # la cadena original que debemos obtener desde antes, osea que es un pedo hacerlo
+    # este xml tiene una fecha que debemos cambiar, además de generar 
+    # el sello correspondiente, partiendo de la cadena original que 
+	# debemos obtener desde antes, osea que es un pedo hacerlo
     # a menos que uses algo como https://github.com/unRob/CFDI
     xml = File.read('test.xml')
     
