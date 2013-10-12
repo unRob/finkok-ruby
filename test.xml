@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd" version="3.2" folio="1" fecha="2013-10-11T20:12:38" formaDePago="PAGO EN UNA SOLA EXHIBICION" condicionesDePago="Sera marcada como pagada en cuanto el receptor haya cubierto el pago." subTotal="11000.00" Moneda="pesos" total="12760.00" metodoDePago="Transferencia Bancaria" tipoDeComprobante="ingreso" LugarExpedicion="Morelia, Michoac&#xE1;n" noCertificado="20001000000200000293" certificado="MIIE2jCCA8KgAwIBAgIUMjAwMDEwMDAwMDAyMDAwMDAyOTMwDQYJKoZIhvcNAQEFBQAwggFcMRowGAYDVQQDDBFBLkMuIDIgZGUgcHJ1ZWJhczEvMC0GA1UECgwmU2VydmljaW8gZGUgQWRtaW5pc3RyYWNpw7NuIFRyaWJ1dGFyaWExODA2BgNVBAsML0FkbWluaXN0cmFjacOzbiBkZSBTZWd1cmlkYWQgZGUgbGEgSW5mb3JtYWNpw7NuMSkwJwYJKoZIhvcNAQkBFhphc2lzbmV0QHBydWViYXMuc2F0LmdvYi5teDEmMCQGA1UECQwdQXYuIEhpZGFsZ28gNzcsIENvbC4gR3VlcnJlcm8xDjAMBgNVBBEMBTA2MzAwMQswCQYDVQQGEwJNWDEZMBcGA1UECAwQRGlzdHJpdG8gRmVkZXJhbDESMBAGA1UEBwwJQ295b2Fjw6FuMTQwMgYJKoZIhvcNAQkCDCVSZXNwb25zYWJsZTogQXJhY2VsaSBHYW5kYXJhIEJhdXRpc3RhMB4XDTEyMTAyNjE5MjI0M1oXDTE2MTAyNjE5MjI0M1owggFTMUkwRwYDVQQDE0BBU09DSUFDSU9OIERFIEFHUklDVUxUT1JFUyBERUwgRElTVFJJVE8gREUgUklFR08gMDA0IERPTiBNQVJUSU4gMWEwXwYDVQQpE1hBU09DSUFDSU9OIERFIEFHUklDVUxUT1JFUyBERUwgRElTVFJJVE8gREUgUklFR08gMDA0IERPTiBNQVJUSU4gQ09BSFVJTEEgWSBOVUVWTyBMRU9OIEFDMUkwRwYDVQQKE0BBU09DSUFDSU9OIERFIEFHUklDVUxUT1JFUyBERUwgRElTVFJJVE8gREUgUklFR08gMDA0IERPTiBNQVJUSU4gMSUwIwYDVQQtExxBQUQ5OTA4MTRCUDcgLyBIRUdUNzYxMDAzNFMyMR4wHAYDVQQFExUgLyBIRUdUNzYxMDAzTURGUk5OMDkxETAPBgNVBAsTCFNlcnZpZG9yMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDlrI9loozd+UcW7YHtqJimQjzX9wHIUcc1KZyBBB8/5fZsgZ/smWS4Sd6HnPs9GSTtnTmM4bEgx28N3ulUshaaBEtZo3tsjwkBV/yVQ3SRyMDkqBA2NEjbcum+e/MdCMHiPI1eSGHEpdESt55a0S6N24PW732Xm3ZbGgOp1tht1wIDAQABox0wGzAMBgNVHRMBAf8EAjAAMAsGA1UdDwQEAwIGwDANBgkqhkiG9w0BAQUFAAOCAQEAuoPXe+BBIrmJn+IGeI+m97OlP3RC4Ct3amjGmZICbvhI9BTBLCL/PzQjjWBwU0MG8uK6e/gcB9f+klPiXhQTeI1YKzFtWrzctpNEJYo0KXMgvDiputKphQ324dP0nzkKUfXlRIzScJJCSgRw9ZifKWN0D9qTdkNkjk83ToPgwnldg5lzU62woXo4AKbcuabAYOVoC7owM5bfNuWJe566UzD6i5PFY15jYMzi1+ICriDItCv3S+JdqyrBrX3RloZhdyXqs2Htxfw4b1OcYboPCu4+9qM3OV02wyGKlGQMhfrXNwYyj8huxS1pHghEROM2Zs0paZUOy+6ajM+Xh0LX2w==" sello="W+QJB+f50i7cYk/+Vyz1Nmsq2wkCxQ7Lf7dksuZAf62MHXh5iR5rcxgM76KN0wOiLhXFvPuTd2SFySpiUUIUYQX5vHpnb/Nj1ZDMv6HbU2p+ekCk+pJ8l9rH5OxePA+pKZsCPWa0TIippnr9LKIiAoK5B4C1fTrTDh6rfOApLvQ=">
+  <cfdi:Emisor nombre="Asociacion de Agricultores del distrito" rfc="AAD990814BP7">
+    <cfdi:DomicilioFiscal calle="Av Madero" noExterior="45" colonia="Centro" localidad="Morelia" referencia="Sin Referencia" municipio="Morelia" estado="Michoac&#xE1;n" pais="M&#xE9;xico" codigoPostal="58000"/>
+    <cfdi:ExpedidoEn calle="Av Madero" noExterior="45" colonia="Centro" localidad="Morelia" referencia="Sin Referencia" municipio="Morelia" estado="Michoac&#xE1;n" pais="M&#xE9;xico" codigoPostal="58000"/>
+    <cfdi:RegimenFiscal Regimen="Pruebas Fiscales"/>
+  </cfdi:Emisor>
+  <cfdi:Receptor nombre="EL Socionation SA de CV" rfc="HEO861214JKL">
+    <cfdi:Domicilio referencia="Sin Referencia" estado="Aguascalientes" pais="M&#xE9;xico"/>
+  </cfdi:Receptor>
+  <cfdi:Conceptos>
+    <cfdi:Concepto cantidad="2" unidad="Pieza" noIdentificacion="SUN" descripcion="Prada Sunglasses-Prada Sun Glasses Aviator" valorUnitario="5500.00" importe="11000.00">
+      <cfdi:ComplementoConcepto/>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos totalImpuestosTrasladados="1760.00">
+    <cfdi:Traslados>
+      <cfdi:Traslado impuesto="IVA" tasa="16.00" importe="1760.00"/>
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento/>
+</cfdi:Comprobante>
