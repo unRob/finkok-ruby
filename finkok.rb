@@ -1,3 +1,4 @@
+# encoding: utf-8
 module FinkOK
   class Comprobante
   
@@ -23,7 +24,7 @@ module FinkOK
     def initialize(usuario, password, entorno: 'produccion')
       @usuario = usuario
       @password = password
-      base = entorno == 'produccion' ? 'https://facturacion.finkok.com/servicios/soap' : 'http://demo-facturacion.finkok.com/servicios/soap'
+      base = entorno == :production ? 'https://facturacion.finkok.com/servicios/soap' : 'http://demo-facturacion.finkok.com/servicios/soap'
       
       @stamp = "#{base}/stamp.wsdl"
       @cancel = "#{base}/cancel.wsdl"
@@ -50,6 +51,8 @@ module FinkOK
          raise Error, error[:codigo_error]
        end
      
+       puts data
+
        return ({
          uuid: data[:uuid],
          timbre: data[:sat_seal],
@@ -61,10 +64,10 @@ module FinkOK
     def cancela uuid, rfc, key, cert
       uuid = [uuid] unless uuid.is_a? Array 
     
-      client = Savon.client(wsdl: @cancel)
+      client = Savon.client(wsdl: @cancel, log_level: :debug, log: false)
     
-      uuid.map! do |uuid|
-        uuid = "<tns:string>#{uuid}</tns:string>"
+      uuid.map! do |u|
+        u = "<tns:string>#{u}</tns:string>"
       end
     
       # Usamos xml derecho porque savon se caga con el wsdl
@@ -83,15 +86,46 @@ XML
      
       response = client.call(:cancel, message: xml)
     
-      pp response.hash
+      data = response.hash[:envelope][:body][:cancel_response][:cancel_result]
+
+      if data[:folios]
+        status = data[:folios][:folio][:estatus_uuid]
+        if status == "201"
+          return data[:folios][:acuse];
+        end
+
+        raise ErrorCancelacion.new status.to_i
+      end
+
+      raise ErrorCancelacion.new(900, response.hash)
     
+    end
+
+    def recibo_cancelacion (uuid, emisor)
+      client = Savon.client(wsdl: @cancel, log_level: :error, log: false)
+      
+      xml = <<XML
+      <tns:uuid>#{uuid}</tns:uuid>
+      <tns:username>#{@usuario}</tns:username>
+      <tns:password>#{@password}</tns:password>
+      <tns:taxpayer_id>#{emisor}</tns:taxpayer_id>
+XML
+
+      response = client.call :get_receipt, message: xml
+
+      body = response.hash[:envelope][:body][:get_receipt_response][:get_receipt_result]
+      if body[:error]
+        raise body[:error]
+      end
+
     end
   
   end
   
   
   class Error < StandardError
-        
+    
+    attr_accessor :code
     ERRORES = {
       '300' => 'Usuario y contraseña inválidos',
       '301' => 'XML mal formado (Error que no se que signifique)',
@@ -102,13 +136,35 @@ XML
       
       '401' => 'Fecha y hora de generación fuera de rango',
       
-      '705' => 'Estructura de XML mal formada (Error de Sintaxis)'
+      '705' => 'Estructura de XML mal formada (Error de Sintaxis)',
+
+      '708' => 'Error de conexión con el SAT'
     }
     
     def initialize (code)
+      @code = code
       super ERRORES[code]
     end
     
+  end
+
+  class ErrorCancelacion < StandardError
+    attr_accessor :code, :data
+    ERRORES = {
+      202 => 'Cancelado Previamente',
+      203 => 'No corresponde el RFC del emisor y de quien solicita la cancelación',
+      205 => 'No existente',
+      900 => 'Error de PAC',
+      708 => 'Error de conexión con el SAT'
+    }
+
+
+    def initialize (code, data=nil)
+      @code = code
+      @data = data
+      msg = ERRORES[code] || "Error #{code}"
+      super msg
+    end
   end
   
   
